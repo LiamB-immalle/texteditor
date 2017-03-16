@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Notepad_advanced"
         mc:Ignorable="d"
         Title="Notepad advanced" Height="700" Width="1050">
-
+        
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -21,9 +21,25 @@
                 <MenuItem Header="_About" Click="About_Click"/>
             </MenuItem>
         </Menu>
-        <Grid DockPanel.Dock="Bottom">
-        </Grid>
-        <TextBox x:Name="writePanel" Height="641" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="0,5,0,0"/>
-
+        <TabControl>
+            <TabItem Header="General">
+                <Grid DockPanel.Dock="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="fileContents" Grid.Column="0"></TextBox>
+                    <GridSplitter HorizontalAlignment="Right" 
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="1" ResizeBehavior="PreviousAndNext"
+                  Width="5" Background="#FFBCBCBC"/>
+                    <ListBox x:Name="peopleListView" Grid.Column="2"></ListBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Teksteditor">
+                <TextBox x:Name="writePanel" Height="641" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="0,5,0,0"/>
+            </TabItem>
+        </TabControl>
     </DockPanel>
 </Window>

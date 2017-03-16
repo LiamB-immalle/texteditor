@@ -21,6 +21,7 @@ namespace Notepad_advanced
     {
         private string currentFile = "";
         private string initialDir;
+        List<Persoon> personen = new List<Persoon>();
 
         public MainWindow()
         {
@@ -28,6 +29,12 @@ namespace Notepad_advanced
             writePanel.Focus();
 
             initialDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            personen.Add(
+                new Persoon() { Voornaam = "Willy", Achternaam = "Janssens", GeboorteDatum = new DateTime(1990, 1, 2) }
+            );
+
+            peopleListView.ItemsSource = personen;
         }
 
         private void exitItem_Click(object sender, RoutedEventArgs e)
@@ -44,12 +51,11 @@ namespace Notepad_advanced
                 if(saveraar.ShowDialog() == true)
                 {
                     currentFile = saveraar.FileName + ".txt";
+                    StreamWriter outputStream = File.CreateText(currentFile);
+                    outputStream.Write(writePanel.Text);
+                    outputStream.Close();
                 }
-            }
-
-            StreamWriter outputStream = File.CreateText(currentFile);
-            outputStream.Write(writePanel.Text);
-            outputStream.Close();
+            }            
         }
 
         private void Open_Click(object sender, RoutedEventArgs e)
