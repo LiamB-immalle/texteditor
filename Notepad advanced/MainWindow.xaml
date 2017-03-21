@@ -27,6 +27,9 @@
             </MenuItem>
         </Menu>
         <TabControl>
+            <TabItem Header="Teksteditor">
+                <TextBox x:Name="writePanel" Height="641" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="0,5,0,0" AcceptsReturn="True"/>
+            </TabItem>
             <TabItem Header="Csv-editor">                
                 <Grid DockPanel.Dock="Bottom">
                     <Grid.ColumnDefinitions>
@@ -41,10 +44,7 @@
                       Width="5" Background="#FFBCBCBC"/>
                     <DataGrid x:Name="peopleGrid" Grid.Column="2"></DataGrid>
                 </Grid>
-            </TabItem>
-            <TabItem Header="Teksteditor">
-                <TextBox x:Name="writePanel" Height="641" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="0,5,0,0" AcceptsReturn="True"/>
-            </TabItem>
+            </TabItem>            
         </TabControl>
     </DockPanel>
 </Window>
