@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Notepad_advanced"
         mc:Ignorable="d"
         Title="Notepad advanced" Height="700" Width="1050">
-        
+
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -28,9 +28,9 @@
         </Menu>
         <TabControl>
             <TabItem Header="Teksteditor">
-                <TextBox x:Name="writePanel" Height="641" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="0,5,0,0" AcceptsReturn="True"/>
+                <TextBox x:Name="writePanel" Height="611" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="4,5,4,0" AcceptsReturn="True"/>
             </TabItem>
-            <TabItem Header="Csv-editor">                
+            <TabItem Header="Csv-editor">
                 <Grid DockPanel.Dock="Bottom">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -44,7 +44,7 @@
                       Width="5" Background="#FFBCBCBC"/>
                     <DataGrid x:Name="peopleGrid" Grid.Column="2"></DataGrid>
                 </Grid>
-            </TabItem>            
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
