@@ -12,33 +12,37 @@
             <MenuItem Header="_File">
                 <MenuItem Header="_New" Click="New_Click"/>
                 <Separator />
-                <MenuItem Header="_Open" Click="Open_Click"/>
+                <MenuItem Header="_Open txt" Click="Opentxt_Click"/>
+                <MenuItem Header="_Open csv" Click="Opencsv_Click"></MenuItem>
                 <MenuItem Header="_Save" Click="Save_Click"/>
                 <Separator />
                 <MenuItem Header="E_xit" Name="exitItem" Click="exitItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Parse" Click="Parse_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem Header="_About" Click="About_Click"/>
             </MenuItem>
         </Menu>
         <TabControl>
-            <TabItem Header="General">
+            <TabItem Header="Csv-editor">                
                 <Grid DockPanel.Dock="Bottom">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="fileContents" Grid.Column="0"></TextBox>
+                    <TextBox x:Name="csvPanel" Grid.Column="0" AcceptsReturn="True"></TextBox>
                     <GridSplitter HorizontalAlignment="Right" 
-                  VerticalAlignment="Stretch" 
-                  Grid.Column="1" ResizeBehavior="PreviousAndNext"
-                  Width="5" Background="#FFBCBCBC"/>
-                    <ListBox x:Name="peopleListView" Grid.Column="2"></ListBox>
+                      VerticalAlignment="Stretch" 
+                      Grid.Column="1" ResizeBehavior="PreviousAndNext"
+                      Width="5" Background="#FFBCBCBC"/>
+                    <DataGrid x:Name="peopleGrid" Grid.Column="2"></DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Teksteditor">
-                <TextBox x:Name="writePanel" Height="641" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="0,5,0,0"/>
+                <TextBox x:Name="writePanel" Height="641" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1028" Margin="0,5,0,0" AcceptsReturn="True"/>
             </TabItem>
         </TabControl>
     </DockPanel>
