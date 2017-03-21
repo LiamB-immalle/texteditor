@@ -22,7 +22,6 @@ namespace Notepad_advanced
         private string currentTxtFile = "";
         private string currentCsvFile = "";
         private string currentFile = "";
-        private string path = "";
         private string initialDir;
         List<Persoon> personen = new List<Persoon>();
 
@@ -41,7 +40,7 @@ namespace Notepad_advanced
             Application.Current.Shutdown();
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private void Savetxt_Click(object sender, RoutedEventArgs e)
         {
             if (currentFile == "")
             {
@@ -52,6 +51,22 @@ namespace Notepad_advanced
                     currentFile = saveraar.FileName + ".txt";
                     StreamWriter outputStream = File.CreateText(currentFile);
                     outputStream.Write(writePanel.Text);
+                    outputStream.Close();
+                }
+            }
+        }
+
+        private void Savecsv_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentFile == "")
+            {
+                SaveFileDialog saveraar = new SaveFileDialog();
+                saveraar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                if (saveraar.ShowDialog() == true)
+                {
+                    currentFile = saveraar.FileName + ".csv";
+                    StreamWriter outputStream = File.CreateText(currentFile);
+                    outputStream.Write(csvPanel.Text);
                     outputStream.Close();
                 }
             }

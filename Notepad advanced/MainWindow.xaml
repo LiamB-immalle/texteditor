@@ -13,8 +13,9 @@
                 <MenuItem Header="_New" Click="New_Click"/>
                 <Separator />
                 <MenuItem Header="_Open txt" Click="Opentxt_Click"/>
-                <MenuItem Header="_Open csv" Click="Opencsv_Click"></MenuItem>
-                <MenuItem Header="_Save" Click="Save_Click"/>
+                <MenuItem Header="_Save txt" Click="Savetxt_Click"/>
+                <MenuItem Header="_Open csv" Click="Opencsv_Click"/>
+                <MenuItem Header="_Save csv" Click="Savecsv_Click"/>
                 <Separator />
                 <MenuItem Header="E_xit" Name="exitItem" Click="exitItem_Click"/>
             </MenuItem>
